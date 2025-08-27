@@ -1,8 +1,19 @@
 <style>
+.navbar-collapse {
+  background: #fff;      
+  z-index: 1000;          
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse.show {
+    margin-bottom: 1rem;
+  }
+}
+
   .navbar-brand {
     font-family: 'Brush Script MT', cursive;
     font-size: 1.8rem;
-    color: #fe424d;
+    color: #fe424d !important;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -24,18 +35,15 @@
   }
 
   .search-btn:hover {
-    background-color: #fe424d;
+    background-color: #ff6b74;
     color: #fff;
   }
 
   .search-inp {
     border-radius: 25px;
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 1rem;
     font-size: 1rem;
-  }
-
-  .nav-link i {
-    margin-right: 0.3rem;
+    min-width: 180px;    
   }
 
   .btn-signup {
@@ -50,6 +58,28 @@
     background-color: #ff6b74;
     color: #fff;
   }
+
+  /*Mobile tweaks only */
+  @media (max-width: 576px) {
+    .search-inp {
+      flex: 1 1 auto;
+      min-width: 120px;
+    }
+    .search-btn {
+      padding: 0 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    /* keep nav links right aligned */
+    .navbar-nav {
+      align-items: flex-start; 
+    }
+    .navbar-nav .nav-link,
+    .navbar-nav .btn-signup {
+      text-align: right;     
+      width: 100%;
+    }
+  }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
@@ -59,51 +89,47 @@
       <i class="fa-regular fa-compass"></i> Wanderlust
     </a>
 
-    <!-- Toggle button for mobile -->
+    <!-- Toggler for mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       
-      <!-- Middle: Search Form -->
-      <div class="mx-auto">
-        <form class="d-flex" role="search" action="/listings" method="GET">
-          <input 
-            class="form-control me-2 search-inp" 
-            type="search" 
-            name="search" 
-            placeholder="Search by location" 
-            value="<%= typeof search !== 'undefined' ? search : '' %>" 
-            required
-          />
-          <button class="btn search-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i> Search
-          </button>
-        </form>
-      </div>
+      <!-- Search Form -->
+      <form class="d-flex mx-md-auto my-2 my-md-0" role="search" action="/listings" method="GET">
+        <input 
+          class="form-control search-inp me-2" 
+          type="search" 
+          name="search" 
+          placeholder="Search by location" 
+          value="<%= typeof search !== 'undefined' ? search : '' %>" 
+          required
+        />
+        <button class="btn search-btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i> Search
+        </button>
+      </form>
 
       <!-- Right-side links -->
-      <div class="navbar-nav ms-auto align-items-center">
-        <a class="nav-link" href="/listings">
-        Explore
-        </a>
-
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings">Explore</a>
         <a class="nav-link" href="/listings/new">
           <i class="fa-solid fa-house"></i> Airbnb your home
         </a>
 
         <% if (!currUser) { %>
-          <a class="btn btn-signup ms-2" href="/signup">
+          <a class="btn btn-signup ms-md-2 my-2 my-md-0" href="/signup">
             <i class="fa-regular fa-user-plus"></i> Sign up
           </a>
-          <a class="nav-link ms-2" href="/login">
+          <a class="nav-link ms-md-2" href="/login">
             <i class="fa-solid fa-right-to-bracket"></i> Log in
           </a>
         <% } %>
 
         <% if (currUser) { %>
-          <a class="nav-link ms-2" href="/logout">
+          <a class="nav-link ms-md-2" href="/logout">
             <i class="fa-solid fa-right-from-bracket"></i> Log out
           </a>
         <% } %>
