@@ -35,7 +35,6 @@ Wanderlust is a full-stack travel accommodation platform inspired by Airbnb, whe
 ### Other Tools & Services
 
 * Cloudinary
-* Mapbox API
 * Passport.js
 * Express Session
 
