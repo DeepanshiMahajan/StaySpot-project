@@ -39,15 +39,6 @@ Wanderlust is a full-stack travel accommodation platform inspired by Airbnb, whe
 * Passport.js
 * Express Session
 
-## 📂 Project Setup
-
-```bash
-git clone <your-repository-link>
-cd Wanderlust-project
-npm install
-npm start
-```
-
 ## 🌐 Future Improvements
 
 * Booking functionality
