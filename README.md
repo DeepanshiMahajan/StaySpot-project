@@ -1,6 +1,6 @@
-# 🌍 Wanderlust – Travel Listing Web Application
+# 🌍 StaySpot – Property Rental Platform
 
-Wanderlust is a full-stack travel accommodation platform inspired by Airbnb, where users can explore, create, and manage property listings. The application provides a seamless experience for travelers and property owners with secure authentication, reviews, image uploads, and interactive maps.
+StaySpot is a full-stack travel accommodation platform inspired by Airbnb, where users can explore, create, and manage property listings. The application provides a seamless experience for travelers and property owners with secure authentication, reviews, image uploads, and interactive maps.
 
 ## 🚀 Features
 
