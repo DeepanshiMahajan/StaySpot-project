@@ -8,7 +8,6 @@ Wanderlust is a full-stack travel accommodation platform inspired by Airbnb, whe
 * 🏡 Create, Edit, and Delete Listings
 * ⭐ Review and Rating System
 * 🖼️ Image Upload using Cloudinary
-* 🗺️ Interactive Maps Integration
 * 📱 Responsive User Interface
 * ⚡ MVC Architecture for clean code structure
 
