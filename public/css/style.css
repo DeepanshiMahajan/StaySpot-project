@@ -56,48 +56,50 @@ body {
 /* Cards */
 .listing-card {
   border: none !important;
-  margin-bottom: 1rem;       
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;           
-  position: relative;
+  border-radius: 18px;
   overflow: hidden;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .card-img-top {
-  border-radius: 1rem !important;
   width: 100% !important;
-  height: 18rem !important;   
+  height: 18rem !important;
   object-fit: cover !important;
-  transition: transform 0.3s ease;
+  border-radius: 18px 18px 0 0 !important;
+  transition: transform 0.4s ease;
 }
 
-/* Hover Effects */
 .listing-card:hover {
-  transform: none !important;
-  box-shadow: none !important;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .listing-card:hover .card-img-top {
-  opacity: 0.8;            
-  transform: none !important;
+  transform: scale(1.04);
 }
 
 .card-body {
-  padding: 0.5rem 0 !important;
+  padding: 0.8rem !important;
 }
 
 .card-text {
-  font-weight: 400 !important;
   font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
 }
 
 .listing-link {
   text-decoration: none;
-  color: #222222 !important;
+  color: inherit !important;
 }
 
 .listing-link:hover {
-  color: #555555 !important;
+  color: inherit !important;
 }
 
 /* Buttons */

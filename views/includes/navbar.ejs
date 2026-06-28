@@ -10,14 +10,16 @@
   }
 }
 
-  .navbar-brand {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 1.8rem;
-    color: #fe424d !important;
+.navbar-brand {
+    font-family:'Trebuchet MS', 'Gill Sans', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #E63946 !important;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-  }
+}
 
   .navbar-brand i {
     font-size: 1.5rem;
@@ -27,7 +29,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #fe424d;
+    background:#E63946;
     color: #fff;
     border-radius: 25px;
     padding: 0 1rem;
@@ -35,7 +37,7 @@
   }
 
   .search-btn:hover {
-    background-color: #ff6b74;
+   background:#D62839;
     color: #fff;
   }
 
@@ -49,24 +51,46 @@
   .btn-signup {
     border-radius: 25px;
     padding: 0.35rem 1rem;
-    background-color: #fe424d;
+    background:#E63946;
     color: #fff;
     border: none;
   }
 
   .btn-signup:hover {
-    background-color: #ff6b74;
+    background:#D62839;
     color: #fff;
   }
+  .nav-link{
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#D62839 !important;
+}
+
+.navbar-nav{
+    gap:0.6rem;
+    align-items:center;
+}
+
+.nav-link{
+    padding:0.4rem 0.7rem !important;
+    border-radius:10px;
+}
+
+.nav-link:hover{
+    background:#f8f8f8;
+}
 
   /*Mobile tweaks only */
   @media (max-width: 576px) {
-    .search-inp {
-      flex: 1 1 auto;
-      min-width: 120px;
-    }
+    .search-inp{
+    width:220px;
+    border-radius:25px;
+}
     .search-btn {
-      padding: 0 0.8rem;
+      padding:0.55rem 1rem;
       font-size: 0.9rem;
     }
 
@@ -82,11 +106,11 @@
   }
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md bg-white shadow-sm sticky-top">
   <div class="container-fluid">
     <!-- Brand -->
     <a class="navbar-brand" href="/listings">
-      <i class="fa-regular fa-compass"></i> Wanderlust
+      <i class="fa-solid fa-location-dot"></i> StaySpot
     </a>
 
     <!-- Toggler for mobile -->
@@ -113,27 +137,33 @@
       </form>
 
       <!-- Right-side links -->
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings">Explore</a>
-        <a class="nav-link" href="/listings/new">
-          <i class="fa-solid fa-house"></i> Airbnb your home
-        </a>
+       <div class="navbar-nav ms-auto align-items-center">
 
-        <% if (!currUser) { %>
-          <a class="btn btn-signup ms-md-2 my-2 my-md-0" href="/signup">
-            <i class="fa-regular fa-user-plus"></i> Sign up
-          </a>
-          <a class="nav-link ms-md-2" href="/login">
-            <i class="fa-solid fa-right-to-bracket"></i> Log in
-          </a>
-        <% } %>
+  <a class="nav-link me-3" href="/listings/new">
+    <i class="fa-solid fa-house"></i> Become a Host
+  </a>
 
-        <% if (currUser) { %>
-          <a class="nav-link ms-md-2" href="/logout">
-            <i class="fa-solid fa-right-from-bracket"></i> Log out
-          </a>
-        <% } %>
-      </div>
+  <% if (!currUser) { %>
+
+    <a class="nav-link me-3" href="/login">
+      Log in
+    </a>
+
+    <a class="btn btn-signup" href="/signup">
+      Sign Up
+    </a>
+
+  <% } %>
+
+  <% if (currUser) { %>
+
+    <a class="nav-link" href="/logout">
+      Log out
+    </a>
+
+  <% } %>
+
+</div>
     </div>
   </div>
 </nav>
