@@ -49,8 +49,16 @@ module.exports.showListing = async (req, res) => {
       return res.redirect("/listings");
     }
 
-    const bookings = await Booking.find({ listing: listing._id, status: "confirmed" })
-      .populate("user");
+   // Today's date (time set to 00:00:00)
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+// Show only bookings whose checkout date is today or later
+const bookings = await Booking.find({
+  listing: listing._id,
+  status: "confirmed",
+  endDate: { $gte: today }
+}).populate("user");
 
     res.render("listings/show", { listing, bookings });
 
